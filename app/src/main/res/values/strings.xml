@@ -1,0 +1,4 @@
+<resources>
+  <string name="app_name">CallMeNow</string>
+  <string name="unknown_error">An unknown error occurred.</string>
+</resources>
