@@ -1,10 +1,10 @@
 package com.sedmandev.callmenow.base
 
+import com.sedmandev.callmenow.application.AppModule
 import com.sedmandev.callmenow.base.interfaces.BaseView
 import com.sedmandev.callmenow.base.interfaces.Presenter
 import com.sedmandev.callmenow.injection.component.DaggerPresenterInjector
 import com.sedmandev.callmenow.injection.component.PresenterInjector
-import com.sedmandev.callmenow.module.ContextModule
 
 /**
  * Parent presenter for all presenters.
@@ -21,7 +21,7 @@ abstract class BasePresenter<out V : BaseView>(protected val view: V) : Presente
   protected val injector: PresenterInjector = DaggerPresenterInjector
       .builder()
       .baseView(view)
-      .contextModule(ContextModule)
+      .appModule(AppModule)
       .build()
 
   init {

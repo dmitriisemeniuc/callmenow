@@ -25,7 +25,7 @@ interface PostView : BaseView {
      * @param errorResId the resource id of the error to display in the view
      */
     fun showError(@StringRes errorResId: Int) {
-        this.showError(getContext().getString(errorResId))
+        //this.showError(getContext().getString(errorResId))
     }
 
     /**

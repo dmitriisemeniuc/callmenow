@@ -1,8 +1,7 @@
 package com.sedmandev.callmenow.injection.component
 
+import com.sedmandev.callmenow.application.AppModule
 import com.sedmandev.callmenow.base.interfaces.BaseView
-import com.sedmandev.callmenow.base.interfaces.Presenter
-import com.sedmandev.callmenow.module.ContextModule
 import com.sedmandev.callmenow.module.NetworkModule
 import com.sedmandev.callmenow.ui.main.MainPresenter
 import com.sedmandev.callmenow.ui.post.PostPresenter
@@ -15,7 +14,7 @@ import javax.inject.Singleton
  * Component providing inject() methods for presenters.
  */
 @Singleton
-@Component(modules = [(ContextModule::class), (NetworkModule::class)])
+@Component(modules = [(AppModule::class), (NetworkModule::class)])
 interface PresenterInjector {
   /**
    * Injects required dependencies into the specified presenter.
@@ -29,7 +28,7 @@ interface PresenterInjector {
   interface Builder {
     fun build(): PresenterInjector
 
-    fun contextModule(contextModule: ContextModule): Builder
+    fun appModule(appModule: AppModule): Builder
 
     @BindsInstance
     fun baseView(baseView: BaseView): Builder

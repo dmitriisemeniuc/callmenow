@@ -48,10 +48,6 @@ abstract class BaseActivity<P : BasePresenter<BaseView>> : BaseView, AppCompatAc
    */
   protected abstract fun instantiatePresenter(): P
 
-  override fun getContext(): Context {
-    return this
-  }
-
   private fun setStatusBarColor(){
     setStatusBarColor(this, statusBarColor)
   }
@@ -69,5 +65,9 @@ abstract class BaseActivity<P : BasePresenter<BaseView>> : BaseView, AppCompatAc
       // finally change the color
       window.statusBarColor = ContextCompat.getColor(activity, color)
     }
+  }
+
+  fun getContext(): Context {
+    return this
   }
 }

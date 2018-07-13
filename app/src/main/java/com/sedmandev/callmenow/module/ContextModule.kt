@@ -18,11 +18,11 @@ object ContextModule {
    * @param baseView the BaseView used to provides the context
    * @return the Context to be provided
    */
-  @Provides
+  /*@Provides
   @JvmStatic
   internal fun provideContext(baseView: BaseView): Context {
     return baseView.getContext()
-  }
+  }*/
 
   /**
    * Provides the Application Context
