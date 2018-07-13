@@ -59,6 +59,6 @@ class PostActivity : BaseActivity<PostPresenter>(), PostView {
     }
 
     override fun instantiatePresenter(): PostPresenter {
-        return PostPresenter(this)
+        return PostPresenter(this, PostInteractor(PostRouter()))
     }
 }

@@ -14,34 +14,44 @@ import javax.inject.Inject
  * @property postApi the API interface implementation
  * @property subscription the subscription to the API call
  */
-class PostPresenter(postView: PostView) : BasePresenter<PostView>(postView) {
-    @Inject
-    lateinit var postApi: PostApi
+class PostPresenter(postView: PostView, private val interactor: PostInteractor) : BasePresenter<PostView>(postView) {
 
-    private var subscription: Disposable? = null
+  /**
+   * Inject this presenter to the PresenterInjector
+   * */
+  override fun inject() {
+    injector.inject(this)
+  }
 
-    override fun onCreate() {
-        loadPosts()
-    }
+  private var subscription: Disposable? = null
 
-    /**
-     * Loads the posts from the API and presents them in the view when retrieved, or showss error if
-     * any.
-     */
-    fun loadPosts() {
-        view.showLoading()
-        subscription = postApi
-                .getPosts()
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribeOn(Schedulers.io())
-                .doOnTerminate { view.hideLoading() }
-                .subscribe(
-                        { postList -> view.updatePosts(postList) },
-                        { view.showError(R.string.unknown_error) }
-                )
-    }
+  override fun onCreate() {
+    loadPosts()
+  }
 
-    override fun onDestroy() {
-        subscription?.dispose()
-    }
+  override fun onResume() {}
+
+  override fun onPause() {}
+
+  override fun onStop() {}
+
+  override fun onDestroy() {
+    subscription?.dispose()
+  }
+
+  /**
+   * Loads the posts from the API and presents them in the view when retrieved, or showss error if
+   * any.
+   */
+  private fun loadPosts() {
+    view.showLoading()
+    subscription = interactor.loadPosts()
+        .observeOn(AndroidSchedulers.mainThread())
+        .subscribeOn(Schedulers.io())
+        .doOnTerminate { view.hideLoading() }
+        .subscribe(
+            { postList -> view.updatePosts(postList) },
+            { view.showError(R.string.unknown_error) }
+        )
+  }
 }

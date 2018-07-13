@@ -3,6 +3,7 @@ package com.sedmandev.callmenow.base
 import android.content.Context
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
+import com.sedmandev.callmenow.base.interfaces.BaseView
 
 /**
  * Base Activity of  all Activity classes.

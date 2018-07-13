@@ -2,7 +2,7 @@ package com.sedmandev.callmenow.module
 
 import android.app.Application
 import android.content.Context
-import com.sedmandev.callmenow.base.BaseView
+import com.sedmandev.callmenow.base.interfaces.BaseView
 import dagger.Module
 import dagger.Provides
 

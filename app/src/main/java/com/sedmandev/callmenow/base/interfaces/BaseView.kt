@@ -1,4 +1,4 @@
-package com.sedmandev.callmenow.base
+package com.sedmandev.callmenow.base.interfaces
 
 import android.content.Context
 

@@ -1,7 +1,7 @@
 package com.sedmandev.callmenow.ui.post
 
 import android.support.annotation.StringRes
-import com.sedmandev.callmenow.base.BaseView
+import com.sedmandev.callmenow.base.interfaces.BaseView
 import com.sedmandev.callmenow.model.Post
 
 /**
