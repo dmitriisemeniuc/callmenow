@@ -15,15 +15,19 @@ import com.sedmandev.callmenow.model.Post
 /**
  * Activity displaying the list of posts
  */
-class PostActivity : BaseActivity<PostPresenter>(), PostView {
-    /**
+class PostActivity /*: BaseActivity<PostPresenter>(), PostView {
+    *//**
      * DataBinding instance
-     */
+     *//*
     private lateinit var binding: ActivityPostBinding
 
-    /**
+    override fun instantiatePresenter(): PostPresenter {
+        return PostPresenter(this, PostInteractor(PostRouter()))
+    }
+
+    *//**
      * The adapter for the list of posts
-     */
+     *//*
     private val postsAdapter = PostAdapter(this)
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -57,8 +61,4 @@ class PostActivity : BaseActivity<PostPresenter>(), PostView {
     override fun hideLoading() {
         binding.progressVisibility = View.GONE
     }
-
-    override fun instantiatePresenter(): PostPresenter {
-        return PostPresenter(this, PostInteractor(PostRouter()))
-    }
-}
+}*/
