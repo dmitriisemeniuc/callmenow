@@ -67,7 +67,7 @@ abstract class BaseActivity<P : BasePresenter<BaseView>> : BaseView, AppCompatAc
     }
   }
 
-  fun getContext(): Context {
+  override fun getContext(): Context {
     return this
   }
 }

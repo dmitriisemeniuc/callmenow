@@ -1,10 +1,10 @@
 package com.sedmandev.callmenow.base
 
-import com.sedmandev.callmenow.application.AppModule
 import com.sedmandev.callmenow.base.interfaces.BaseView
 import com.sedmandev.callmenow.base.interfaces.Presenter
 import com.sedmandev.callmenow.injection.component.DaggerPresenterInjector
 import com.sedmandev.callmenow.injection.component.PresenterInjector
+import com.sedmandev.callmenow.module.AppModule
 
 /**
  * Parent presenter for all presenters.
