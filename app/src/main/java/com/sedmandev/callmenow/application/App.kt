@@ -6,13 +6,13 @@ class App : Application() {
 
   override fun onCreate() {
     super.onCreate()
-    app = this
+    //app = this
   }
 
-  companion object {
+  /*companion object {
     lateinit var app: App
       private set
-  }
+  }*/
 }
 
 

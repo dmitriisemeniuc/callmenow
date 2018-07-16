@@ -8,9 +8,11 @@ import com.sedmandev.callmenow.api.endpoints.AuthorizedApi
 import com.sedmandev.callmenow.api.endpoints.UnAuthorizedApi
 import com.sedmandev.callmenow.api.qualifiers.Authorized
 import com.sedmandev.callmenow.api.qualifiers.UnAuthorized
+import com.sedmandev.callmenow.api.response.ErrorHttpReader
 import com.sedmandev.callmenow.auth.AppTokenAuthenticator
 import com.sedmandev.callmenow.session.SessionData
 import com.sedmandev.callmenow.utils.AddTokenInterceptor
+import com.sedmandev.callmenow.utils.NetworkHelper
 import dagger.Module
 import dagger.Provides
 import dagger.Reusable
@@ -28,15 +30,6 @@ import retrofit2.converter.gson.GsonConverterFactory
 // Safe here as we are dealing with a Dagger 2 module
 @Suppress("unused")
 object NetworkModule {
-
-  @Provides
-  @Reusable
-  @JvmStatic
-  internal fun providesGson(): Gson {
-    return GsonBuilder()
-        .setLenient()
-        .create()
-  }
 
   @Provides
   @Reusable
@@ -139,5 +132,19 @@ object NetworkModule {
   @JvmStatic
   internal fun providesAddTokenInterceptor(sessionData: SessionData): AddTokenInterceptor {
     return AddTokenInterceptor(sessionData)
+  }
+
+  @Provides
+  @Reusable
+  @JvmStatic
+  internal fun providesNetworkHelper(context: Context): NetworkHelper {
+    return NetworkHelper(context)
+  }
+
+  @Provides
+  @Reusable
+  @JvmStatic
+  internal fun providesErrorHttpReader(context: Context): ErrorHttpReader {
+    return ErrorHttpReader(context.resources)
   }
 }

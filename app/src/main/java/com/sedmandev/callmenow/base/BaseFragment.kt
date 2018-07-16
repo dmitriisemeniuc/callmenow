@@ -1,5 +1,6 @@
 package com.sedmandev.callmenow.base
 
+import android.content.Context
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.view.LayoutInflater
@@ -24,5 +25,9 @@ abstract class BaseFragment<P : BasePresenter<BaseView>> : Fragment(), BaseView 
   override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
     super.onViewCreated(view, savedInstanceState)
     presenter.onCreate()
+  }
+
+  override fun getContext(): Context {
+    return requireContext()
   }
 }

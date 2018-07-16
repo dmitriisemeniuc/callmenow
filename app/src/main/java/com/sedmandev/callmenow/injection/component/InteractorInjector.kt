@@ -1,6 +1,7 @@
 package com.sedmandev.callmenow.injection.component
 
 import com.sedmandev.callmenow.base.interfaces.Router
+import com.sedmandev.callmenow.module.AppModule
 import com.sedmandev.callmenow.module.NetworkModule
 import com.sedmandev.callmenow.ui.main.MainInteractor
 import com.sedmandev.callmenow.ui.post.PostInteractor
@@ -13,7 +14,7 @@ import javax.inject.Singleton
  * Component providing inject() methods for interactors.
  */
 @Singleton
-@Component(modules = [(NetworkModule::class)])
+@Component(modules = [(AppModule::class), (NetworkModule::class)])
 interface InteractorInjector {
   /**
    * Injects required dependencies into the specified interactor.
@@ -27,9 +28,10 @@ interface InteractorInjector {
   interface Builder {
     fun build(): InteractorInjector
 
+    fun appModule(appModule: AppModule): Builder
     fun networkModule(networkModule: NetworkModule): Builder
 
     @BindsInstance
-    fun baseRouter(baseRouter : Router) : Builder
+    fun router(router : Router) : Builder
   }
 }
