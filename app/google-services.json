@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "917399372766",
+    "firebase_url": "https://call-me-now-sedmandev.firebaseio.com",
+    "project_id": "call-me-now-sedmandev",
+    "storage_bucket": "call-me-now-sedmandev.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:917399372766:android:1ed674586bf14722",
+        "android_client_info": {
+          "package_name": "com.sedmandev.callmenow"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "917399372766-85jnca8ci36j1ta8ruv08ktmnbmuqdgo.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.sedmandev.callmenow",
+            "certificate_hash": "bf12c8c81911b71d50b9a5bd25624c4dcc62de7b"
+          }
+        },
+        {
+          "client_id": "917399372766-albs6c94u3vdhd1jisgdu78dqmkkn4pq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDTTTbhlWpRKRR8WfeM8Aa73m-oKQhflOI"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "917399372766-albs6c94u3vdhd1jisgdu78dqmkkn4pq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

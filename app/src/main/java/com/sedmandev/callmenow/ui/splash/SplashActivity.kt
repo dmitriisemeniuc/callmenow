@@ -30,6 +30,10 @@ class SplashActivity : BaseActivity<SplashPresenter>(), SplashView {
     presenter.onCreate()
   }
 
+  override fun initViews() {
+    TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+  }
+
   override fun onDestroy() {
     super.onDestroy()
     presenter.onDestroy()

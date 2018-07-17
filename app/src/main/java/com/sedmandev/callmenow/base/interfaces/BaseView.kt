@@ -11,4 +11,6 @@ interface BaseView {
    * @return the Context in which the application is running
    */
   fun getContext(): Context
+
+  fun initViews()
 }
