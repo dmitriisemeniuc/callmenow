@@ -77,6 +77,9 @@ dependencies {
     implementation 'com.squareup.okhttp3:okhttp:3.9.0'
     implementation 'com.squareup.okhttp3:logging-interceptor:3.8.1'
 
+    //AppIntro
+    //implementation 'com.github.apl-devs:appintro:v4.2.3'
+
     // Tests
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'

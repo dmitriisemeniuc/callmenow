@@ -6,15 +6,15 @@ import com.sedmandev.callmenow.base.BaseActivity
 
 class SplashActivity : BaseActivity<SplashPresenter>(), SplashView {
 
-  override fun instantiatePresenter(): SplashPresenter {
-    return SplashPresenter(this, SplashInteractor(SplashRouter()))
-  }
-
   override val contentViewId: Int
     get() = R.layout.activity_splash
 
   override val statusBarColor: Int
     get() = android.R.color.black
+
+  override fun instantiatePresenter(): SplashPresenter {
+    return SplashPresenter(this, SplashInteractor(SplashRouter()))
+  }
 
   /**
    * DataBinding instance
@@ -23,7 +23,7 @@ class SplashActivity : BaseActivity<SplashPresenter>(), SplashView {
 
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
-    setContentView(R.layout.activity_splash)
+    //setContentView(R.layout.activity_splash)
 
     //binding = DataBindingUtil.setContentView(this, R.layout.activity_splash)
 

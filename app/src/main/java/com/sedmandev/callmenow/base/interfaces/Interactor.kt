@@ -1,3 +1,8 @@
 package com.sedmandev.callmenow.base.interfaces
 
-interface Interactor
+import android.content.Context
+
+interface Interactor {
+
+  fun navigateTo(context: Context, cls: Class<*>)
+}

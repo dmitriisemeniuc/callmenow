@@ -3,6 +3,7 @@ package com.sedmandev.callmenow.injection.component
 import com.sedmandev.callmenow.base.interfaces.Router
 import com.sedmandev.callmenow.module.AppModule
 import com.sedmandev.callmenow.module.NetworkModule
+import com.sedmandev.callmenow.ui.login.LoginInteractor
 import com.sedmandev.callmenow.ui.main.MainInteractor
 import com.sedmandev.callmenow.ui.post.PostInteractor
 import com.sedmandev.callmenow.ui.splash.SplashInteractor
@@ -18,11 +19,12 @@ import javax.inject.Singleton
 interface InteractorInjector {
   /**
    * Injects required dependencies into the specified interactor.
-   * @param interactor interactor in which to inject the dependencies
+   * @param interactor in which to inject the dependencies
    */
-  fun inject(interactor: PostInteractor)
-  fun inject(interactor: SplashInteractor)
-  fun inject(interactor: MainInteractor)
+  fun inject(postInteractor: PostInteractor)
+  fun inject(loginInteractor: LoginInteractor)
+  fun inject(splashInteractor: SplashInteractor)
+  fun inject(mainInteractor: MainInteractor)
 
   @Component.Builder
   interface Builder {

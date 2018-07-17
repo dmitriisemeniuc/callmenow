@@ -4,5 +4,5 @@ import android.content.Context
 
 interface Router {
 
-  fun startActivity(context: Context, cls: Class<*>)
+  fun navigateTo(context: Context, cls: Class<*>)
 }

@@ -1,5 +1,6 @@
 package com.sedmandev.callmenow.base
 
+import android.content.Context
 import com.sedmandev.callmenow.base.interfaces.Interactor
 import com.sedmandev.callmenow.base.interfaces.Router
 import com.sedmandev.callmenow.injection.component.DaggerInteractorInjector
@@ -23,5 +24,9 @@ abstract class BaseInteractor<out R: Router>(protected val router: R) : Interact
 
   init {
     this.inject()
+  }
+
+  override fun navigateTo(context: Context, cls: Class<*>) {
+    router.navigateTo(context, cls)
   }
 }

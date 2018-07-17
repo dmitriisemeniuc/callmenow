@@ -1,6 +1,8 @@
 package com.sedmandev.callmenow.ui.splash
 
 import com.sedmandev.callmenow.base.BasePresenter
+import com.sedmandev.callmenow.ui.login.LoginActivity
+import com.sedmandev.callmenow.ui.main.MainActivity
 import io.reactivex.Completable
 import io.reactivex.disposables.Disposable
 import java.util.concurrent.TimeUnit
@@ -18,7 +20,7 @@ class SplashPresenter(splashView: SplashView, private val interactor: SplashInte
   override fun onCreate() {
     Completable.complete()
         .delay(3, TimeUnit.SECONDS)
-        .doOnComplete({ interactor.navigateToMainScreen(view.getContext()) })
+        .doOnComplete({ interactor.navigateTo(view.getContext(), LoginActivity::class.java) })
         .subscribe()
   }
 
